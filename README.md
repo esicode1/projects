@@ -1,6 +1,6 @@
 # projects
 ## Amazing projects with Python
-First clone or download this repository
-create a virtualenv 
-pip install -r requirements.txt
-enjoy coding...
+1. clone or download this repository
+2. create a virtualenv 
+3. `pip install -r requirements.txt`
+4. enjoy coding...
