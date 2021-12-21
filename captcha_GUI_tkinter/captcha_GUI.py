@@ -10,7 +10,7 @@ from captcha.image import ImageCaptcha
 
 def createCaptcha(flag=0):
 
-    global random_import 
+    global random_string
     global image_label
     global image_display
     global entry

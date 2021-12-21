@@ -1,0 +1,4 @@
+captcha==0.3
+Pillow==8.4.0
+termcolor==1.1.0
+tk==0.1.0
