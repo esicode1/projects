@@ -1,4 +1,4 @@
-# Hello from *esigoo* 
+# Hello from **esigoo**
 ## Amazing projects with Python
 1. clone or download this repository : `https://github.com/esigoo/projects.git`
 2. create a virtualenv : `python3 -m venv .venv`
