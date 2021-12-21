@@ -5,4 +5,4 @@
 6. **active virtualenv (on *Linux*) : `source .venv/bin/activate`**
 7. **`pip install -r requirements.txt`**
 9. **enjoy coding...**
-10. **for learning python visit my site: [esigoo.ir](https://esigoo.ir)**
+* **for learning python visit my site: [esigoo.ir](https://esigoo.ir)**
