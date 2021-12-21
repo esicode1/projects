@@ -3,9 +3,9 @@
 __author__ = "ehsangb180@gmail.com"
 
 '''
-    1. make a virtualenv and activate it.
-    2. if necessary, connect to a stable VPN.
-    3. give your youtube URL and download it. 
+    
+    1. if necessary, connect to a stable VPN.
+    2. give your youtube URL and download it. 
 
 '''
 import os
