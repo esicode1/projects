@@ -1,0 +1,127 @@
+{% extends 'base.html'%}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block title %}Register{% endblock %}
+
+
+{% block head %}
+
+    <link rel="icon" type="image/png" href="{% static 'registration/login/images/icons/favicon.ico' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'registration/login/vendor/bootstrap/css/bootstrap.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'registration/login/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'registration/login/fonts/Linearicons-Free-v1.0.0/icon-font.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'registration/login/vendor/animate/animate.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'registration/login/vendor/css-hamburgers/hamburgers.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'registration/login/vendor/animsition/css/animsition.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'registration/login/vendor/select2/select2.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'registration/login/vendor/daterangepicker/daterangepicker.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'registration/login/css/util.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'registration/login/css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'registration/login/css/rtl.css' %}">
+
+{% endblock %}
+
+{% block main %}
+
+    <div class="limiter">
+        {% if form.non_field_errors %}
+        <div class="errors">
+            {% for error in form.non_field_errors %}
+            <span>{{error}}</span> {% endfor %}
+        </div>
+        {% endif %}
+        <div class="container-login100">
+            <div class="wrap-login100 p-t-50 p-b-90">
+                <form class="login100-form validate-form flex-sb flex-w" method="post">{% csrf_token %}
+                    <span class="login100-form-title p-b-51 myfont">
+						Registeration	
+                    </span>
+
+
+                    <div class="wrap-input100 validate-input m-b-16" data-validate="Username is required">
+                    
+                        {{form.username|add_class:"input100"|attr:"placeholder=username"}} {% if form.username.errors %}
+                        <div class="errors">
+                            {% for error in form.username.errors %}
+                            <span>{{error}}</span> {% endfor %}
+                        </div>
+                        {% endif %}
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input m-b-16" data-validate="Username is required">
+                        {{form.email|add_class:"input100"|attr:"placeholder=email"}} {% if form.email.errors %}
+                        <div class="errors">
+                            {% for error in form.email.errors %}
+                            <span>{{error}}</span> {% endfor %}
+                        </div>
+                        {% endif %}
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input m-b-16" data-validate="Password is required">
+                        {{form.password1|add_class:"input100"|attr:"placeholder=password"}} {% if form.password1.errors %}
+                        <div class="errors">
+                            {% for error in form.password1.errors %}
+                            <span>{{error}}</span> {% endfor %}
+                        </div>
+                        {% endif %}
+                        <span class="focus-input100"></span>
+                    </div>
+                    <div class="wrap-input100 validate-input m-b-16" data-validate="Password is required">
+                        {{form.password2|add_class:"input100"|attr:"placeholder= confirm ‌password"}} {% if form.password2.errors %}
+                        <div class="errors">
+                            {% for error in form.password2.errors %}
+                            <span>{{error}}</span> {% endfor %}
+                        </div>
+                        {% endif %}
+                        <span class="focus-input100"></span>
+                    </div>
+                    <div>
+                        have an account?
+                        <a href="{% url 'login' %}" class="txt1 myfont"> login</a>
+                    </div>
+                    <div class="container-login100-form-btn m-t-17">
+                        <button class="login100-form-btn myfont">
+							signup
+						</button>
+                    </div>
+                    <div>
+                        <a href="{% url 'resume:home' %}" class="txt1 myfont">HOME</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="dropDownSelect1"></div>
+
+    <!--===============================================================================================-->
+    <script src="{% static 'registration/login/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'registration/login/vendor/animsition/js/animsition.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'registration/login/vendor/bootstrap/js/popper.js' %}"></script>
+    <script src="{% static 'registration/login/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'registration/login/vendor/select2/select2.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'registration/login/vendor/daterangepicker/moment.min.js' %}"></script>
+    <script src="{% static 'registration/login/vendor/daterangepicker/daterangepicker.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'registration/login/vendor/countdowntime/countdowntime.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'registration/login/js/main.js' %}"></script>
+
+{% endblock %}
