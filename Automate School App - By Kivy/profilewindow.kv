@@ -1,0 +1,114 @@
+<ProfileWindow>:
+
+    name: name
+    # family: family
+    # number: number
+    email: email
+    # image: image
+
+
+    canvas.before:
+        BorderImage:
+            border: 10, 10, 10, 10
+            source: 'photo/light.jpg'
+            pos: self.pos
+            size: self.size
+    FloatLayout:
+        Label:
+            text: "[font=font/P.ttf]Information[/font]"
+            markup: True
+            size_hint: 0.8,0.2
+            pos_hint:{"x":0.1, "top":1}
+            color:[0, 0, 0, 0.8]
+            font_size: (root.width**2 + root.height**2) / 12**4
+
+        
+        Image: 
+            source: 'photo/fce.png'
+            size_hint: 0.2,0.2
+            pos_hint: {'x':0.4,'top':0.8}
+            allow_stretch: True 
+
+        Label:
+            text: "Name:"
+            size_hint: 0.5,0.12
+            pos_hint:{"x":0.08, "top":0.57}
+            font_size: (root.width**2 + root.height**2) / 15**4
+            color:[0, 0, 0, 0.6]
+
+        Label:
+            id: name
+            text:''
+            size_hint: 0.5,0.12
+            pos_hint:{"x":0.09, "top":0.57}
+            font_size: (root.width**2 + root.height**2) / 14**4
+            color:[0, 0, 0, 0.6]
+
+        Label:
+            text: "Family:"
+            size_hint: 0.5,0.12
+            pos_hint:{"x":0.08, "top":0.50}
+            color:[0, 0, 0, 0.6]
+            font_size: (root.width**2 + root.height**2) / 15**4
+
+        Label:
+            text: "Tel:"
+            size_hint: 0.5,0.12
+            pos_hint:{"x":0.08, "top":0.43}
+            font_size: (root.width**2 + root.height**2) / 15**4
+            color:[0, 0, 0, 0.6]
+
+        Label:
+            text: "Email:"
+            size_hint: 0.5,0.12
+            pos_hint:{"x":0.08, "top":0.38}
+            color:[0, 0, 0, 0.6]
+            font_size: (root.width**2 + root.height**2) / 15**4
+        
+        Label:
+            id: email
+            text: ''
+            size_hint: 0.5,0.12
+            pos_hint:{"x":0.09, "top":0.38}
+            color:[0, 0, 0, 0.6]
+            font_size: (root.width**2 + root.height**2) / 14**4
+            
+        
+        Label:
+            text: ""
+            size_hint: 0.5,0.12
+            pos_hint:{"x":0.11, "top":0.52}
+            font_size: (root.width**2 + root.height**2) / 15**4
+            color:[0, 0, 0, 0.6]
+
+        Label:
+            id: number
+            size_hint: 0.5, 0.08
+            pos_hint:{"x":0.3, "top":0.44}
+            color:[0, 0, 0, 0.6]
+            font_size: (root.width**2 + root.height**2) / 15**4
+
+        
+        Button:
+            text: "[font=font/bottomfont.ttf]Back[/font]"
+            markup: True
+            pos_hint:{"x":0.88,"y":.01}
+            size_hint:0.11, 0.10
+            font_size: (root.width**2 + root.height**2) / 13**4
+            background_color: [0.0,0.0,0.0,0.1]
+            color: 0,0,0,0.7
+            border: 2,2,2,2
+            on_release:
+                root.manager.transition.direction = "left"
+                root.logOut() 
+        
+        # Button:
+        #     # pos_hint:{"x":0.5,"y":0.5}
+        #     size_hint: 0.11, 0.11
+        #     font_size: (root.width**2 + root.height**2) / 13**4
+        #     text: ""
+        #     background_normal: 'photo/close1.png'
+        #     background_down: 'photo/close1.png'
+        #     border: 2,2,2,2
+        #     on_release:
+        #         app.get_running_app().stop()

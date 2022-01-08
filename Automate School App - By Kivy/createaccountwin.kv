@@ -1,0 +1,109 @@
+#:kivy 1.11.1
+
+<CreateAccountWindow>:
+    
+    name: "create"
+    username: username
+    password: passw
+    action: action
+    
+    canvas.before:
+        BorderImage:
+            border: 10, 10, 10, 10
+            source: 'photo/light.jpg'
+            pos: self.pos
+            size: self.size
+
+    FloatLayout:
+        Label:
+            text: "[font=font/P.ttf]Create an Account[/font]"
+            bold: True
+            markup: True
+            size_hint: 0.8,0.2
+            pos_hint:{"x":0.1, "top":1}
+            font_size: (root.width**2 + root.height**2) / 12**4
+            color:[0, 0, 0, 0.9]
+
+        Label:
+            text: "Username"
+            bold: True
+            size_hint: 0.5,0.12
+            pos_hint:{"x":0.11, "top":0.78}
+            font_size: (root.width**2 + root.height**2) / 15**4
+            color:[0, 0, 0, 0.9]
+
+        TextInput:
+            id: username
+            size_hint: 0.5, 0.08
+            pos_hint:{"x":0.3, "top":0.7}
+            background_color: [0.0,0.0,0.0,0.1]
+            foreground_color: (0, 0, 0, 0.6)
+            multiline: False
+            valign: 'middle'
+            halign: 'center'
+            font_size: (root.width**2 + root.height**2) / 14**4
+
+        Label:
+            text: "Password"
+            bold: True
+            size_hint: 0.5,0.12
+            pos_hint:{"x":0.11, "top":0.65}
+            font_size: (root.width**2 + root.height**2) / 15**4
+            color:[0, 0, 0, 0.9]
+
+        TextInput:
+            id: passw
+            size_hint: 0.5, 0.08
+            pos_hint:{"x":0.3, "top":0.57}
+            background_color: [0.0,0.0,0.0,0.1]
+            foreground_color: (0, 0, 0, 0.6)
+            multiline: False
+            use_bubble:True
+            valign: 'middle'
+            halign: 'center'
+            font_size: (root.width**2 + root.height**2) / 14**4
+            
+        Label:
+            text: "Action"
+            bold: True
+            size_hint: 0.5,0.12
+            pos_hint:{"x":0.09, "top":0.52}
+            font_size: (root.width**2 + root.height**2) / 15**4
+            color:[0, 0, 0, 0.9]
+
+        TextInput:
+            id: action
+            size_hint: 0.5, 0.08
+            pos_hint:{"x":0.3, "top":0.44}
+            background_color: [0.0,0.0,0.0,0.1]
+            foreground_color: (0, 0, 0, 0.6)
+            multiline: False
+            # password: True
+            valign: 'middle'
+            halign: 'center'
+            font_size: (root.width**2 + root.height**2) / 15**4
+
+        Button:
+            text: "[font=font/bottomfont.ttf]Back[/font]"
+            markup: True
+            pos_hint:{"x":0.88,"y":.01}
+            size_hint:0.11, 0.10
+            font_size: (root.width**2 + root.height**2) / 13**4
+            background_color: [0.0,0.0,0.0,0.1]
+            color: 0,0,0,0.7
+            border: 2,2,2,2
+            on_release:
+                root.manager.transition.direction = "down"
+                root.logOut()
+        
+        Button:
+            pos_hint:{"x":0.3,"top":0.33}
+            size_hint: 0.5, 0.08
+            background_color: [0.0,0.0,0.0,0.5]
+            font_size: (root.width**2 + root.height**2) / 13**4
+            text: "[font=font/bottomfont.ttf]Submit[/font]"
+            markup: True
+            color: 0,0,0,1
+            on_release:
+                root.manager.transition.direction = "up"
+                root.submit()

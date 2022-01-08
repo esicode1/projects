@@ -1,0 +1,68 @@
+#:kivy 1.11.1
+
+
+<VerifyWindow>:
+    
+    code: code
+
+    canvas.before:
+        BorderImage:
+            border: 10, 10, 10, 10
+            source: 'photo/light.jpg'
+            pos: self.pos
+            size: self.size
+    FloatLayout:
+        Label:
+            text: "Welcome"
+            size_hint: 0.8,0.2
+            pos_hint:{"x":0.1, "top":1}
+            font_size: (root.width**2 + root.height**2) / 11**4
+            color:[0, 0, 0, 0.8]
+
+        Label:
+            text: "Enter verify code "
+            pos_hint:{"x":0.01,"top":0.7}
+            size_hint:0.8, 0.2
+            color:[0, 0, 0, 0.8]
+            
+        TextInput:
+            id: code
+            pos_hint: {"x":0.56,"top":0.63}
+            size_hint: 0.1, 0.05 
+            background_color: [0.0,0.0,0.0,0.1]
+            font_size: (root.width**2 + root.height**2) / 15**4
+            multiline:False
+            password: False
+
+        Button:
+            text: "[font=font/bottomfont.ttf]Verify[/font]"
+            markup: True
+            pos_hint:{"x":0.41,"top":0.5}
+            size_hint:0.12,0.08
+            background_color: [0.0,0.0,0.0,0.1]
+            color: 0,0,0,0.8
+            on_release:
+                root.verify()    
+        
+        Button:
+            text: "[font=font/bottomfont.ttf]Send[/font]"
+            markup: True
+            pos_hint:{"x":0.55,"top":0.5}
+            size_hint:0.12,0.08
+            background_color: [0.0,0.0,0.0,0.1]
+            color: 0,0,0,0.8
+            on_release:
+                root.send_code()  
+        
+        Button:
+            text: "[font=font/bottomfont.ttf]Back[/font]"
+            markup: True
+            # pos_hint:{"x":0.28,"top":0.5}
+            size_hint:0.12,0.1
+            font_size: (root.width**2 + root.height**2) / 13**4            
+            background_color: [0.0,0.0,0.0,0.1]
+            color: 0,0,0,0.8
+            on_release:
+                root.manager.transition.direction = "right"
+                root.logOut()  
+        
