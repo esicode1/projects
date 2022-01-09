@@ -4,8 +4,8 @@ from notifypy import Notify
 
 def get_price_data():
 	'''
-		This function requests to an public API without api key
-		and get bitcoin buy price data.
+		This function requests to a public API without api key
+		and get bitcoin's buy price data.
 		if you get Connection refused error,
 		connect to a safe VPN then run the script :)
 	'''
