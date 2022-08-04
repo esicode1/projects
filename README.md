@@ -6,4 +6,3 @@
 6. **active virtualenv (on *Linux*) :    `source .venv/bin/activate`**
 7. **install packages :                  `pip install -r requirements.txt`**
 9. **enjoy coding...**
-10. ** end **
